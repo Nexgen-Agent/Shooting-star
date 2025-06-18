@@ -4,15 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shooting Star — Shine Brighter</title>
+  <meta name="description" content="Shooting Star is a creative agency engineered to spark bold transformation in silence. Discover our unique approach and let your brand shine brighter." />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preload" href="assets/logo.png" as="image">
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 75%, #3347b0 100%);
+      color: #fff;
+      padding: 4rem 0 3rem 0;
+      text-align: center;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 2px 16px #e9ecef;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+    .slogan {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: #16213e;
+      padding: 0.9rem 2.1rem;
+      border-radius: 7px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 1px 8px #b3b3b3;
+    }
+    .btn:hover, .btn:focus {
+      background: #3347b0;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 2.5rem 0 1.5rem 0; }
+      .hero-text h1 { font-size: 2rem; }
+      .slogan { font-size: 1rem; }
+    }
+    .site-header { background: #1a1a2e; color: #fff; padding: 1rem 0; }
+    .logo-container { display: flex; align-items: center; }
+    .logo { width: 60px; height: auto; }
+    .nav { display: flex; gap: 1.2rem; margin-left: 2rem; }
+    .nav a { color: #fff; text-decoration: none; font-weight: 500; }
+    .nav a:focus, .nav a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      .nav { flex-direction: column; gap: 0.6rem; margin-left: 0; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="logo-container">
-      <img src="assets/logo.png" alt="Shooting Star Logo" class="logo" />
+      <img src="assets/logo.png" alt="Shooting Star Logo" class="logo" width="60" height="60" loading="lazy" />
+      <span class="sr-only">Shooting Star Home</span>
     </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
@@ -21,12 +74,26 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Shooting Star</h1>
-      <p class="slogan">Shine Brighter</p>
-      <a href="contact.html" class="btn">Enter the Orbit</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-text">
+        <h1>Shooting Star</h1>
+        <p class="slogan">Brilliance is never loud. Shine brighter with us.</p>
+        <a href="contact.html" class="btn">Enter the Orbit</a>
+      </div>
+    </section>
+    <section class="content" style="max-width:700px;margin:2rem auto;text-align:center;">
+      <p>
+        <strong>Shooting Star</strong> is a creative agency engineered to spark bold transformation in silence. We don’t follow trends; we create luminous paths for others to follow. Discover our services, explore our work, and see how we can help your brand shine brighter.
+      </p>
+      <a href="about.html" class="btn" style="margin-top:1.2rem;background:#3347b0;color:#fff;">Learn More</a>
+    </section>
+  </main>
+  <footer style="text-align:center;padding:1rem 0;background:#1a1a2e;color:#fff;">
+    &copy; <span id="year"></span> Shooting Star. All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
