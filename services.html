@@ -4,35 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Shooting Star</title>
+  <meta name="description" content="Explore the full suite of services offered by Shooting Star—from brand strategy and luxury marketing to influencer activation, creative design, and silent growth tactics." />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preload" href="assets/logo.png" as="image">
+  <style>
+    .content { max-width: 750px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #e9ecef; }
+    .services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.4rem; margin-top: 2rem; list-style: none; padding: 0; }
+    .service-card { background: #f7f9fa; border-radius: 8px; padding: 1.2rem 1rem; box-shadow: 0 1px 6px #d4d8e1; transition: transform 0.13s; }
+    .service-card:hover, .service-card:focus-within { transform: scale(1.025); box-shadow: 0 4px 18px #d4d8e1; }
+    .service-title { font-size: 1.15rem; font-weight: bold; color: #16213e; margin-bottom: 0.5rem; }
+    .service-desc { color: #444; font-size: 0.98rem; }
+    @media (max-width: 700px) {
+      .content { padding: 1rem; }
+      .services-list { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="logo-container">
-      <img src="assets/logo.png" alt="Shooting Star Logo" class="logo" />
+      <img src="assets/logo.png" alt="Shooting Star Logo" class="logo" width="60" height="60" loading="lazy" />
+      <span class="sr-only">Shooting Star Home</span>
     </div>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main Navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
+      <a href="services.html" aria-current="page">Services</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="team.html">Team</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <section class="content">
-    <div class="inner">
-      <h1>Our Services</h1>
-      <ul>
-        <li>Brand Strategy & Positioning</li>
-        <li>Luxury Marketing Campaigns</li>
-        <li>Influencer & Partnership Activation</li>
-        <li>Creative Direction & Design</li>
-        <li>Social Media Management</li>
-        <li>Silent Brand Growth Tactics</li>
-      </ul>
-    </div>
-  </section>
+  <main>
+    <section class="content">
+      <div class="inner">
+        <h1>Our Services</h1>
+        <p>From brand inception to silent market domination, Shooting Star offers a suite of services crafted to make your brand shine—quietly but powerfully.</p>
+        <ul class="services-list" aria-label="Service Offerings">
+          <li class="service-card" tabindex="0">
+            <div class="service-title">Brand Strategy & Positioning</div>
+            <div class="service-desc">Crafting unique brand identities and strategies that stand out in any market—without shouting.</div>
+          </li>
+          <li class="service-card" tabindex="0">
+            <div class="service-title">Luxury Marketing Campaigns</div>
+            <div class="service-desc">Bespoke campaigns for high-end brands, blending exclusivity, aspiration, and subtlety for maximum impact.</div>
+          </li>
+          <li class="service-card" tabindex="0">
+            <div class="service-title">Influencer & Partnership Activation</div>
+            <div class="service-desc">Curating authentic collaborations that amplify your message and connect with the right audiences.</div>
+          </li>
+          <li class="service-card" tabindex="0">
+            <div class="service-title">Creative Direction & Design</div>
+            <div class="service-desc">Visionary design and direction for all touchpoints—digital, print, and experiential.</div>
+          </li>
+          <li class="service-card" tabindex="0">
+            <div class="service-title">Social Media Management</div>
+            <div class="service-desc">Strategic content and community management to grow your presence and influence quietly but steadily.</div>
+          </li>
+          <li class="service-card" tabindex="0">
+            <div class="service-title">Silent Brand Growth Tactics</div>
+            <div class="service-desc">Innovative, under-the-radar techniques for building brand loyalty and organic buzz.</div>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn" style="margin-top:2.5rem;display:inline-block;background:#3347b0;color:#fff;">Start Your Project</a>
+      </div>
+    </section>
+  </main>
+  <footer style="text-align:center;padding:1rem 0;background:#1a1a2e;color:#fff;">
+    &copy; <span id="year"></span> Shooting Star. All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
