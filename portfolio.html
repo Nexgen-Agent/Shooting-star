@@ -4,28 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Shooting Star</title>
+  <meta name="description" content="Discover the creative work of Shooting Star. Explore select projects that shaped iconic brands—from stealth campaigns to cultural takeovers." />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preload" href="assets/logo.png" as="image">
+  <style>
+    .content { max-width: 900px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #e9ecef; }
+    .portfolio-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+    .portfolio-item { background: #f7f9fa; border-radius: 8px; box-shadow: 0 1px 6px #d4d8e1; padding: 1.3rem; transition: transform 0.13s; }
+    .portfolio-item:hover, .portfolio-item:focus-within { transform: translateY(-6px) scale(1.025); box-shadow: 0 4px 18px #d4d8e1; }
+    .portfolio-item img { width: 100%; border-radius: 5px; margin-bottom: 0.9rem; }
+    .portfolio-title { font-size: 1.14rem; font-weight: 600; color: #16213e; margin-bottom: 0.4rem; }
+    .portfolio-desc { color: #444; margin-bottom: 0.5rem; }
+    .portfolio-link { color: #3347b0; text-decoration: none; font-weight: 500; }
+    .portfolio-link:focus, .portfolio-link:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      .content { padding: 1rem; }
+      .portfolio-list { gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="logo-container">
-      <img src="assets/logo.png" alt="Shooting Star Logo" class="logo" />
+      <img src="assets/logo.png" alt="Shooting Star Logo" class="logo" width="60" height="60" loading="lazy" />
+      <span class="sr-only">Shooting Star Home</span>
     </div>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main Navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
       <a href="team.html">Team</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <section class="content">
-    <div class="inner">
-      <h1>Our Work</h1>
-      <p>Explore select projects that shaped iconic brands — from stealth campaigns to cultural takeovers.</p>
-    </div>
-  </section>
+  <main>
+    <section class="content">
+      <div class="inner">
+        <h1>Our Work</h1>
+        <p>Explore select projects that shaped iconic brands — from stealth campaigns to cultural takeovers.</p>
+        <div class="portfolio-list" aria-label="Portfolio Projects">
+          <!-- Example project 1 -->
+          <div class="portfolio-item" tabindex="0">
+            <img src="assets/portfolio1.jpg" alt="Brand X Stealth Campaign Mockup">
+            <div class="portfolio-title">Brand X Stealth Campaign</div>
+            <div class="portfolio-desc">A disruptive digital launch for a global tech leader, executed with viral secrecy and creative flair.</div>
+            <a href="#" class="portfolio-link">View Case Study</a>
+          </div>
+          <!-- Example project 2 -->
+          <div class="portfolio-item" tabindex="0">
+            <img src="assets/portfolio2.jpg" alt="Cultural Takeover for Nova">
+            <div class="portfolio-title">Nova Cultural Takeover</div>
+            <div class="portfolio-desc">Reinvented a legacy brand’s image through immersive experiences and a bold new narrative.</div>
+            <a href="#" class="portfolio-link">View Case Study</a>
+          </div>
+          <!-- Example project 3 -->
+          <div class="portfolio-item" tabindex="0">
+            <img src="assets/portfolio3.jpg" alt="Silent Influencer Activation">
+            <div class="portfolio-title">Silent Influencer Activation</div>
+            <div class="portfolio-desc">Orchestrated an influencer-driven campaign that captivated audiences—without a single paid ad.</div>
+            <a href="#" class="portfolio-link">View Case Study</a>
+          </div>
+          <!-- Add more portfolio-item blocks as you grow! -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer style="text-align:center;padding:1rem 0;background:#1a1a2e;color:#fff;">
+    &copy; <span id="year"></span> Shooting Star. All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
