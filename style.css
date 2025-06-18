@@ -1,106 +1,80 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #0e0e0e;
-  color: #ffffff;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: #f5c542;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ffffff;
-}
-
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #121212;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #222;
-}
-
-.logo {
-  height: 50px;
-}
-
-.nav a {
-  margin: 0 1rem;
-  font-weight: 500;
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('../assets/hero-bg.jpg') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero-text h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0.5rem;
-  color: #f5c542;
-}
-
-.hero-text .slogan {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #ccc;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #f5c542;
-  color: #0e0e0e;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #ffffff;
-  color: #000;
-}
-
-.content {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #f5c542;
-}
-
-.inner p, .inner ul {
-  font-size: 1.1rem;
-  color: #ddd;
-  margin-bottom: 1rem;
-}
-
-ul {
-  list-style-type: square;
-  margin-left: 1.5rem;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #121212;
-  color: #777;
-  font-size: 0.9rem;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Shooting Star</title>
+  <meta name="description" content="Meet the creative and strategic minds behind Shooting Star. Discover our team's expertise in branding, design, strategy, and digital innovation." />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preload" href="assets/logo.png" as="image">
+  <style>
+    .content { max-width: 900px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #e9ecef; }
+    .team-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+    .team-member { background: #f7f9fa; border-radius: 8px; box-shadow: 0 1px 6px #d4d8e1; padding: 1.3rem 1rem; text-align: center; transition: transform 0.13s; }
+    .team-member:hover, .team-member:focus-within { transform: translateY(-6px) scale(1.025); box-shadow: 0 4px 18px #d4d8e1; }
+    .team-photo { width: 88px; height: 88px; object-fit: cover; border-radius: 50%; margin-bottom: 0.7rem; }
+    .team-name { font-size: 1.11rem; font-weight: 600; color: #16213e; margin-bottom: 0.2rem; }
+    .team-role { color: #3347b0; font-size: 0.97rem; margin-bottom: 0.5rem; }
+    .team-bio { color: #444; font-size: 0.96rem; }
+    @media (max-width: 600px) {
+      .content { padding: 1rem; }
+      .team-list { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Shooting Star Logo" class="logo" width="60" height="60" loading="lazy" />
+      <span class="sr-only">Shooting Star Home</span>
+    </div>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="team.html" aria-current="page">Team</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="content">
+      <div class="inner">
+        <h1>Meet the Team</h1>
+        <p>Our experts combine silence with strategy. Visionaries. Creators. Silent assassins of the digital world.</p>
+        <div class="team-list" aria-label="Team Members">
+          <!-- Example team member 1 -->
+          <div class="team-member" tabindex="0">
+            <img src="assets/team-alex.jpg" alt="Alex Rivera, Creative Director" class="team-photo">
+            <div class="team-name">Alex Rivera</div>
+            <div class="team-role">Creative Director</div>
+            <div class="team-bio">Alex crafts silent revolutions in branding, leading the creative vision and pushing boundaries with every project.</div>
+          </div>
+          <!-- Example team member 2 -->
+          <div class="team-member" tabindex="0">
+            <img src="assets/team-jamie.jpg" alt="Jamie Chen, Strategy Lead" class="team-photo">
+            <div class="team-name">Jamie Chen</div>
+            <div class="team-role">Strategy Lead</div>
+            <div class="team-bio">Jamie is the analytical engine, blending data, intuition, and market insight to quietly position brands ahead of the curve.</div>
+          </div>
+          <!-- Example team member 3 -->
+          <div class="team-member" tabindex="0">
+            <img src="assets/team-morgan.jpg" alt="Morgan Lee, Digital Producer" class="team-photo">
+            <div class="team-name">Morgan Lee</div>
+            <div class="team-role">Digital Producer</div>
+            <div class="team-bio">Morgan ensures seamless execution—transforming creative sparks into flawless, high-impact digital experiences.</div>
+          </div>
+          <!-- Add more team-member blocks as your team grows! -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer style="text-align:center;padding:1rem 0;background:#1a1a2e;color:#fff;">
+    &copy; <span id="year"></span> Shooting Star. All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
